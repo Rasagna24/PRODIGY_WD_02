@@ -1,0 +1,82 @@
+@keyframes borderMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;  /* Set background color to black */
+    font-family: Arial, sans-serif;
+}
+
+.stopwatch {
+    text-align: center;
+    background-color: #000;  /* Set background color of the box to black */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    color: #fff;  /* Set text color to white */
+}
+
+.stopwatch::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff00ff, #2196F3, #ff00ff, #2196F3);
+    background-size: 200%;
+    z-index: -1;
+    animation: borderMove 3s linear infinite;
+}
+
+#display {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.buttons button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;  /* Set button text color to white */
+}
+
+#start {
+    background-color: #4CAF50;  /* Green */
+}
+
+#pause {
+    background-color: #FF9800;  /* Orange */
+}
+
+#reset {
+    background-color: #F44336;  /* Red */
+}
+
+#lap {
+    background-color: #2196F3;  /* Blue */
+}
+
+#laps {
+    list-style-type: none;
+    padding: 0;
+}
+
+#laps li {
+    font-size: 1em;
+    padding: 5px 0;
+    color: #fff;  /* Set lap text color to white */
+}
